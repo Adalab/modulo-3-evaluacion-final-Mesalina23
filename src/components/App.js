@@ -20,6 +20,8 @@ function App() {
             <li>
               <a href=''></a>
               <img className='' src='' alt='' title='' />
+              <h4 className=''>Nombre</h4>
+              <p className=''>Especie</p>
             </li>
           </ul>
         </section>
