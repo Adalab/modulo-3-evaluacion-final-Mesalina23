@@ -10,14 +10,17 @@ function App() {
         <section>
           <form>
             <label className='' htmlFor=''>
-              ¿Qué personaje quieres ver?
+              ¿Que personaje quieres ver?
             </label>
             <input className='' type='text' name='' id='' />
           </form>
         </section>
         <section>
           <ul>
-            <li></li>
+            <li>
+              <a href=''></a>
+              <img className='' src='' alt='' title='' />
+            </li>
           </ul>
         </section>
       </main>
