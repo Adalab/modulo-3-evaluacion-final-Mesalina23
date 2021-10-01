@@ -1,0 +1,30 @@
+.footer__container {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+
+  &--copy {
+    margin-left: 10px;
+    color: $green-color;
+    font-weight: 600;
+    font-size: small;
+    @media all and(min-width: 768px) {
+      margin-left: 40px;
+      font-size: x-large;
+    }
+  }
+  &--paragraph {
+    color: $green-color;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: small;
+    @media all and(min-width:768px) {
+      margin-right: 40px;
+      font-size: x-large;
+    }
+  }
+}

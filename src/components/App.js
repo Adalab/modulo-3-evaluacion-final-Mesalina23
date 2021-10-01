@@ -1,12 +1,27 @@
 import '../styles/App.scss';
 import '../styles/core/_reset.scss';
 import Header from './Header';
+import Footer from './Footer';
 function App() {
   return (
-    <div className='App'>
+    <div className='page'>
       <Header></Header>
-      <main></main>
-      <footer></footer>
+      <main>
+        <section>
+          <form>
+            <label className='' htmlFor=''>
+              ¿Qué personaje quieres ver?
+            </label>
+            <input className='' type='text' name='' id='' />
+          </form>
+        </section>
+        <section>
+          <ul>
+            <li></li>
+          </ul>
+        </section>
+      </main>
+      <Footer></Footer>
     </div>
   );
 }
