@@ -1,10 +1,14 @@
-import '../styles/App.scss';
+//import '../styles/App.scss';
 import logo from '../images/logo.png';
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <header>
-      <img src={logo} alt='Logo de Rick y Morty'></img>
+    <header className='header__container'>
+      <img
+        className='header__container--img'
+        src={logo}
+        alt='Logo de Rick y Morty'
+      ></img>
     </header>
   );
 };
