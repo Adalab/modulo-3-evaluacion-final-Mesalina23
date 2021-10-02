@@ -5,6 +5,7 @@ import api from '../services/charactersApi';
 import Header from './Header';
 import Footer from './Footer';
 import CharacterList from './CharacterList';
+//import CharacterSearch from './CharacterSearch';
 
 function App() {
   const [data, setData] = useState([]);
@@ -13,21 +14,35 @@ function App() {
       setData(initialData);
     });
   }, []);
-
+  const [searchName, setSearchName] = useState('');
+  const handleSearchName = (ev) => {
+    ev.preventDefault();
+    setSearchName(ev.currentTarget.value);
+  };
+  const filteredData = data.filter((character) =>
+    character.name.toLocaleLowerCase().includes(searchName.toLocaleLowerCase())
+  );
   return (
     <div className='page'>
       <Header></Header>
       <main>
         <section>
-          <form className='form_search'>
-            <label className='' htmlFor=''>
+          <form className='form__search'>
+            <label className='form__search--label' htmlFor='name'>
               ¿Que personaje quieres ver?
             </label>
-            <input className='' type='text' name='' id='' />
+            <input
+              className='form__search--input'
+              type='text'
+              name='name'
+              id='name'
+              value={searchName}
+              onChange={handleSearchName}
+            />
           </form>
         </section>
         <section>
-          <CharacterList data={data} />
+          <CharacterList data={filteredData} />
         </section>
       </main>
       <Footer></Footer>

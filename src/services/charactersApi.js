@@ -4,17 +4,19 @@ function getCharactersFromApi() {
   )
     .then((response) => response.json())
     .then((json) => {
-      return json.results.map((character) => {
-        return {
-          id: character.id,
-          name: character.name,
-          specie: character.species,
-          image: character.image,
-          origin: character.origin.name,
-          episode: character.episode,
-          status: character.status,
-        };
-      });
+      return json.results
+        .map((character) => {
+          return {
+            id: character.id,
+            name: character.name,
+            specie: character.species,
+            image: character.image,
+            origin: character.origin.name,
+            episode: character.episode,
+            status: character.status,
+          };
+        })
+        .sort();
     });
 }
 const objetToExport = {
