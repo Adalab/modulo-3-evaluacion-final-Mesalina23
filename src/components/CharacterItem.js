@@ -10,6 +10,7 @@ function CharacterItem(props) {
       <article className='card__article'>
         <h4 className='card__article--title'>{props.characterData.name}</h4>
         <p className='card__article--specie'>{props.characterData.specie}</p>
+        <p>{props.characterData.status}</p>
       </article>
     </div>
   );

@@ -5,41 +5,51 @@ import api from '../services/charactersApi';
 import Header from './Header';
 import Footer from './Footer';
 import CharacterList from './CharacterList';
+import CharacterSearch from './CharacterSearch';
+//import SearchByFilters from './SearchByFilters';
 //import CharacterSearch from './CharacterSearch';
 
 function App() {
   const [data, setData] = useState([]);
+  const [searchName, setSearchName] = useState('');
+  const [searchFilters, setSearchFilters] = useState('all');
+  //const [searchSpecie, setSearchSpecie] = useState('');
+  //const [searchStatus, setSearchStatus] = useState('');
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
       setData(initialData);
     });
   }, []);
-  const [searchName, setSearchName] = useState('');
+  const handleSearchFilters = (ev) => {
+    setSearchFilters(ev.currentTarget.value);
+  };
   const handleSearchName = (ev) => {
     ev.preventDefault();
     setSearchName(ev.currentTarget.value);
   };
-  const filteredData = data.filter((character) =>
-    character.name.toLocaleLowerCase().includes(searchName.toLocaleLowerCase())
-  );
+
+  const filteredData = data
+    .filter((character) =>
+      character.name
+        .toLocaleLowerCase()
+        .includes(searchName.toLocaleLowerCase())
+    )
+    .filter(
+      (character) =>
+        searchFilters === 'all' || character.filters === searchFilters
+    );
+
   return (
     <div className='page'>
       <Header></Header>
       <main>
         <section>
-          <form className='form__search'>
-            <label className='form__search--label' htmlFor='name'>
-              ¿Que personaje quieres ver?
-            </label>
-            <input
-              className='form__search--input'
-              type='text'
-              name='name'
-              id='name'
-              value={searchName}
-              onChange={handleSearchName}
-            />
-          </form>
+          <CharacterSearch
+            searchName={searchName}
+            handleSearchName={handleSearchName}
+            searchFilters={searchFilters}
+            handleSearchFilters={handleSearchFilters}
+          />
         </section>
         <section>
           <CharacterList data={filteredData} />
