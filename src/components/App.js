@@ -1,14 +1,25 @@
 import '../styles/App.scss';
 import '../styles/core/_reset.scss';
+import { useState, useEffect } from 'react';
+import api from '../services/charactersApi';
 import Header from './Header';
 import Footer from './Footer';
+import CharacterList from './CharacterList';
+
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    api.getCharactersFromApi().then((initialData) => {
+      setData(initialData);
+    });
+  }, []);
+
   return (
     <div className='page'>
       <Header></Header>
       <main>
         <section>
-          <form>
+          <form className='form_search'>
             <label className='' htmlFor=''>
               ¿Que personaje quieres ver?
             </label>
@@ -16,14 +27,7 @@ function App() {
           </form>
         </section>
         <section>
-          <ul>
-            <li>
-              <a href=''></a>
-              <img className='' src='' alt='' title='' />
-              <h4 className=''>Nombre</h4>
-              <p className=''>Especie</p>
-            </li>
-          </ul>
+          <CharacterList data={data} />
         </section>
       </main>
       <Footer></Footer>
