@@ -1,0 +1,25 @@
+.card__container {
+  &--ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  &--li {
+    background-color: rgb(18, 16, 20, 40%);
+    width: 270px;
+    border-radius: 20%;
+    padding: 20px;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+  &--image {
+    height: 270px;
+    border-radius: 20%;
+  }
+}
+.card__article {
+  color: $green-color;
+  text-shadow: 2px 2px 5px rgb(18, 214, 214);
+  &--title {
+    font-weight: 600;
+  }
+}
