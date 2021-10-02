@@ -1,6 +1,7 @@
 import '../styles/App.scss';
 import '../styles/core/_reset.scss';
 import { useState, useEffect } from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import api from '../services/charactersApi';
 import Header from './Header';
 import Footer from './Footer';
@@ -43,17 +44,27 @@ function App() {
     <div className='page'>
       <Header></Header>
       <main>
-        <section>
-          <CharacterSearch
-            searchName={searchName}
-            handleSearchName={handleSearchName}
-            searchFilters={searchFilters}
-            handleSearchFilters={handleSearchFilters}
-          />
-        </section>
-        <section>
-          <CharacterList data={filteredData} />
-        </section>
+        <Switch>
+          <Route path='/user/:id'>
+            <section>otro componente</section>
+          </Route>
+          <Route exact path='/'>
+            <section>
+              <CharacterSearch
+                searchName={searchName}
+                handleSearchName={handleSearchName}
+                searchFilters={searchFilters}
+                handleSearchFilters={handleSearchFilters}
+              />
+            </section>
+            <section>
+              <CharacterList data={filteredData} />
+            </section>
+          </Route>
+          <Route>
+            <section> Oh! Página equivocada.</section>
+          </Route>
+        </Switch>
       </main>
       <Footer></Footer>
     </div>
