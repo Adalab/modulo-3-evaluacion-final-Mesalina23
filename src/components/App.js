@@ -3,10 +3,12 @@ import '../styles/core/_reset.scss';
 import { useState, useEffect } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import api from '../services/charactersApi';
+//import ls from '../services/ls';
 import Header from './Header';
 import Footer from './Footer';
 import CharacterList from './CharacterList';
 import CharacterSearch from './CharacterSearch';
+import CharacterDetails from './CharacterDetails';
 //import SearchByFilters from './SearchByFilters';
 //import CharacterSearch from './CharacterSearch';
 
@@ -16,6 +18,7 @@ function App() {
   const [searchFilters, setSearchFilters] = useState('all');
   //const [searchSpecie, setSearchSpecie] = useState('');
   //const [searchStatus, setSearchStatus] = useState('');
+
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
       setData(initialData);
@@ -28,7 +31,13 @@ function App() {
     ev.preventDefault();
     setSearchName(ev.currentTarget.value);
   };
-
+  const routeData = useRouteMatch('/character/:id');
+  const characterId = routeData !== null ? routeData.params.id : '';
+  console.log(characterId);
+  const selectedCharacter = data.find(
+    (character) => character.id === parseInt(characterId)
+  );
+  console.log(selectedCharacter);
   const filteredData = data
     .filter((character) =>
       character.name
@@ -45,8 +54,12 @@ function App() {
       <Header></Header>
       <main>
         <Switch>
-          <Route path='/user/:id'>
-            <section>otro componente</section>
+          <Route path='/character/:id'>
+            <section>
+              <CharacterDetails
+                selectedCharacter={selectedCharacter}
+              ></CharacterDetails>
+            </section>
           </Route>
           <Route exact path='/'>
             <section>

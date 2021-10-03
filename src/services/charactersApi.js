@@ -9,10 +9,10 @@ function getCharactersFromApi() {
           return {
             id: character.id,
             name: character.name,
-            specie: character.species,
+            species: character.species,
             image: character.image,
             origin: character.origin.name,
-            episode: character.episode,
+            episodes: character.episode.length,
             status: character.status,
           };
         })
