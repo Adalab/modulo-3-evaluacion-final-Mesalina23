@@ -4,29 +4,43 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-top: 50px;
 }
 .section__intro {
   display: flex;
   &--title {
-    color: white;
+    color: $green-color;
     margin-right: 30px;
   }
   &--img {
     width: 30px;
     margin-left: 30px;
+    &:hover {
+      transform: scale(1.5);
+    }
   }
 }
 
 .section__info {
   background-color: rgba(18, 16, 20, 0.5);
-  width: fit-content;
+  border-radius: 20%;
+  width: 500px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   color: white;
+  font-size: large;
   line-height: 40px;
   font-weight: 600;
   &--ul {
     list-style-type: none;
+    padding: 20px;
+  }
+  &--img {
+    border-radius: 20%;
+    padding: 20px;
+    height: 200px;
   }
 }

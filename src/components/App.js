@@ -40,7 +40,6 @@ function App() {
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
-  console.log(selectedCharacter);
   const filteredData = data
     .filter((character) =>
       character.name
@@ -55,7 +54,7 @@ function App() {
   return (
     <div className='page'>
       <Header></Header>
-      <main>
+      <main className='page__main'>
         <Switch>
           <Route path='/character/:id'>
             <section>

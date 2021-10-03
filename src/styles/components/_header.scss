@@ -1,14 +1,25 @@
 .header__container {
-  height: 250px;
+  height: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   &--img {
     width: 320px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px;
     @media all and (min-width: 768px) {
       width: 500px;
     }
+  }
+  &--player {
+    height: 70px;
+    width: 260px;
+    background-color: $green-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--song {
+    color: chartreuse;
   }
 }

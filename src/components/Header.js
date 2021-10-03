@@ -1,4 +1,5 @@
 //import '../styles/App.scss';
+import song from '../audio/loveMorty.mp3';
 import logo from '../images/logo.png';
 
 const Header = () => {
@@ -9,6 +10,18 @@ const Header = () => {
         src={logo}
         alt='Logo de Rick y Morty'
       ></img>
+      <div className='header__container--player'>
+        <audio
+          id='song'
+          type='audio/mp3'
+          controls
+          autoPlay
+          className='header__container--song'
+        >
+          {''}
+          <source src={song} />
+        </audio>
+      </div>
     </header>
   );
 };

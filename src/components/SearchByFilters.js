@@ -1,5 +1,6 @@
 function SearchByFilters(props) {
   console.log(props);
+
   return (
     <>
       <label className='form__search--labelSelect' htmlFor='filters'>

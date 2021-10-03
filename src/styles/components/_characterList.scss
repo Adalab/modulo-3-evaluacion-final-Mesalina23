@@ -2,9 +2,10 @@
   &--ul {
     margin-right: 10px;
     margin-left: 10px;
-    gap: 5px;
-    display: grid;
+    gap: 20px;
+    display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
   }
   &--li {
     background-color: rgba(18, 16, 20, 0.5);
@@ -19,13 +20,13 @@
   }
   &--image {
     width: 180px;
-    height: 220px;
+    height: 180px;
     border-radius: 20%;
   }
 }
 .card__article {
   color: $green-color;
-  text-shadow: 2px 2px 5px rgb(18, 214, 214);
+  text-shadow: $blue-shadow;
   display: flex;
   flex-direction: column;
   justify-content: center;
