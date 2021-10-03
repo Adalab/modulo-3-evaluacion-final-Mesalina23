@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom';
 function CharacterItem(props) {
   return (
-    <div className='card__container'>
+    <Link
+      to={`./character/${props.characterData.id}`}
+      className='card__container'
+    >
       <img
         className='card__container--image'
         src={props.characterData.image}
@@ -12,7 +16,7 @@ function CharacterItem(props) {
         <p className='card__article--specie'>{props.characterData.species}</p>
         <p>{props.characterData.status}</p>
       </article>
-    </div>
+    </Link>
   );
 }
 export default CharacterItem;
