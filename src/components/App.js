@@ -9,6 +9,7 @@ import Footer from './Footer';
 import CharacterList from './CharacterList';
 import CharacterSearch from './CharacterSearch';
 import CharacterDetails from './CharacterDetails';
+import PageNotFound from './PageNotFound';
 //import SearchByFilters from './SearchByFilters';
 //import CharacterSearch from './CharacterSearch';
 
@@ -77,7 +78,7 @@ function App() {
             </section>
           </Route>
           <Route>
-            <section> Oh! Página equivocada.</section>
+            <PageNotFound></PageNotFound>
           </Route>
         </Switch>
       </main>
