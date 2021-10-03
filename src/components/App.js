@@ -32,8 +32,11 @@ function App() {
     setSearchName(ev.currentTarget.value);
   };
   const routeData = useRouteMatch('/character/:id');
+  console.log(routeData);
+
   const characterId = routeData !== null ? routeData.params.id : '';
   console.log(characterId);
+
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
