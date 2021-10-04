@@ -2,7 +2,7 @@ import image from '../images/notFound.jpg';
 import { Link } from 'react-router-dom';
 import arrow from '../images/flecha-curva.png';
 
-function CharacterNotFound() {
+function CharacterIdNotFound() {
   return (
     <div className='characterContainer'>
       <section className='section__intro'>
@@ -27,4 +27,4 @@ function CharacterNotFound() {
     </div>
   );
 }
-export default CharacterNotFound;
+export default CharacterIdNotFound;

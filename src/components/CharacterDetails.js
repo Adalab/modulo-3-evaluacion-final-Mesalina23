@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import arrow from '../images/flecha-curva.png';
-import CharacterNotFound from './CharacterNotFound';
+import CharacterIdNotFound from './CharacterIdNotFound';
 function CharacterDetails(props) {
   if (props.selectedCharacter === undefined) {
-    return <CharacterNotFound></CharacterNotFound>;
+    return <CharacterIdNotFound></CharacterIdNotFound>;
   } else {
     return (
       <div className='characterContainer'>

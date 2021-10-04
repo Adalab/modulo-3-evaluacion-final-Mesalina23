@@ -5,6 +5,9 @@
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
     @media all and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media all and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }

@@ -14,7 +14,6 @@ import PageNotFound from './PageNotFound';
 function App() {
   const [data, setData] = useState([]);
   const [searchName, setSearchName] = useState('');
-  //const [searchFilters, setSearchFilters] = useState('all');
   const [searchSpecie, setSearchSpecie] = useState('all');
   const [searchStatus, setSearchStatus] = useState('all');
 
@@ -23,9 +22,7 @@ function App() {
       setData(initialData);
     });
   }, []);
-  //const handleSearchFilters = (ev) => {
-  //setSearchFilters(ev.currentTarget.value);
-  //};
+
   const handleSearchSpecie = (ev) => {
     setSearchSpecie(ev.currentTarget.value);
   };

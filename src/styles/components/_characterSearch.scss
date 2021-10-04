@@ -17,10 +17,12 @@
     height: 18px;
     width: 100px;
     background-color: $blue-color;
+    border-radius: 10%;
   }
   &--inputSearch {
     background-color: $blue-color;
     height: 18px;
     width: 100px;
+    border-radius: 5%;
   }
 }
