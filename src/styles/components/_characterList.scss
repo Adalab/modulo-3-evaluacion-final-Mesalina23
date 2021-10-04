@@ -45,17 +45,19 @@
 .card__article {
   //color: $green-color;
   //text-shadow: $blue-shadow;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align-last: center;
   &--title {
+    grid-column: 1/3;
     font-weight: 600;
     margin-top: 15px;
     color: violet;
     text-shadow: none;
+    margin-bottom: 7px;
   }
-  &--specie {
-    color: $green-color;
+  &--img {
+    height: 50px;
+    margin-left: 15px;
   }
 }
