@@ -1,23 +1,25 @@
 .header__container {
-  height: 200px;
+  height: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
   &--img {
-    width: 320px;
-    margin: 20px;
+    width: 140px;
+    margin-top: 20px;
     @media all and (min-width: 768px) {
       width: 500px;
     }
   }
   &--player {
     height: 70px;
-    width: 260px;
+    width: 160px;
     background-color: $blue-color;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media all and (min-width: 768px) {
+      width: 260px;
+    }
   }
 }

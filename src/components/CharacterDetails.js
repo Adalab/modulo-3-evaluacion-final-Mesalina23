@@ -26,10 +26,10 @@ function CharacterDetails(props) {
             alt={props.selectedCharacter.name}
           />
           <ul className='section__info--ul'>
-            <li>Especie: {props.selectedCharacter.species}</li>
-            <li>Planeta de origen: {props.selectedCharacter.origin}</li>
-            <li>Número de episodios: {props.selectedCharacter.episodes}</li>
-            <li>: {props.selectedCharacter.status}</li>
+            <li>Specie: {props.selectedCharacter.species}</li>
+            <li>Origin: {props.selectedCharacter.origin}</li>
+            <li>Nº Episodes: {props.selectedCharacter.episodes}</li>
+            <li>Status: {props.selectedCharacter.status}</li>
           </ul>
         </section>
       </div>

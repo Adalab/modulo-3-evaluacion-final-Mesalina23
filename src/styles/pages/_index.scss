@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   font-family: $font-page;
   &__main {
-    min-height: 80vh;
+    min-height: 60vh;
+    @media all and(min-width) {
+      min-height: 80vh;
+    }
   }
 }
