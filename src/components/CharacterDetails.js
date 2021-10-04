@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom';
 import arrow from '../images/flecha-curva.png';
+import CharacterNotFound from './CharacterNotFound';
 function CharacterDetails(props) {
   if (props.selectedCharacter === undefined) {
-    return (
-      <section>
-        <p>ops!!! Usuario no encontrado</p>
-      </section>
-    );
+    return <CharacterNotFound></CharacterNotFound>;
   } else {
     return (
       <div className='characterContainer'>
@@ -32,7 +29,7 @@ function CharacterDetails(props) {
             <li>Especie: {props.selectedCharacter.species}</li>
             <li>Planeta de origen: {props.selectedCharacter.origin}</li>
             <li>Número de episodios: {props.selectedCharacter.episodes}</li>
-            <li>¿Vivo?: {props.selectedCharacter.status}</li>
+            <li>: {props.selectedCharacter.status}</li>
           </ul>
         </section>
       </div>

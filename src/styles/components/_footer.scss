@@ -1,9 +1,20 @@
-@keyframes buz {
+@keyframes buzr {
   from {
     transform: translateX(0);
   }
   50% {
     transform: translateX(40px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes buzl {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40px);
   }
   to {
     transform: translateX(0);
@@ -21,9 +32,13 @@
   &--copy {
     margin-left: 10px;
     color: $white-color;
+    animation-name: buzl;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
     //text-shadow: $blue-shadow;
-    font-weight: 600;
+    font-weight: 400;
     font-size: small;
+
     @media all and(min-width: 768px) {
       margin-left: 40px;
       font-size: large;
@@ -32,9 +47,9 @@
   &--paragraph {
     color: $white-color;
     margin-right: 10px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: small;
-    animation-name: buz;
+    animation-name: buzr;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     @media all and(min-width:768px) {

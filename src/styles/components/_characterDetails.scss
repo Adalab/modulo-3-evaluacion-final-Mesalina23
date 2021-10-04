@@ -9,7 +9,7 @@
 .section__intro {
   display: flex;
   &--title {
-    color: $green-color;
+    color: violet; //$green-color;
     margin-right: 30px;
   }
   &--img {
@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  color: white;
+  color: rgb(247, 170, 27);
   font-size: large;
   line-height: 40px;
   font-weight: 600;

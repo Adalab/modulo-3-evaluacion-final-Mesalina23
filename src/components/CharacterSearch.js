@@ -9,8 +9,10 @@ function CharacterSearch(props) {
       />
 
       <SearchByFilters
-        searchFilters={props.searchFilters}
-        handleSearchFilters={props.handleSearchFilters}
+        searchSpecie={props.searchSpecie}
+        handleSearchSpecie={props.handleSearchSpecie}
+        searchStatus={props.searchStatus}
+        handleSearchStatus={props.handleSearchStatus}
       />
     </form>
   );

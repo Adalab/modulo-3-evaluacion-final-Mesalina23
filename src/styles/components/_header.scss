@@ -15,12 +15,9 @@
   &--player {
     height: 70px;
     width: 260px;
-    background-color: $green-color;
+    background-color: $blue-color;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  &--song {
-    color: chartreuse;
   }
 }

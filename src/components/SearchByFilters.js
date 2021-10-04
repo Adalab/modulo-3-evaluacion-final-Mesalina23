@@ -3,19 +3,34 @@ function SearchByFilters(props) {
 
   return (
     <>
-      <label className='form__search--labelSelect' htmlFor='filters'>
-        Filtros:
+      <label className='form__search--labelSelect' htmlFor='species'>
+        Filtrar por especie:
       </label>
       <select
         className='form__search--inputSearch'
-        name='filters'
-        id='filters'
-        value={props.searchFilters}
-        onChange={props.handleSearchFilters}
+        name='species'
+        id='species'
+        value={props.searchSpecie}
+        onChange={props.handleSearchSpecie}
       >
         <option value='all'>Todos</option>
-        <option value='specie'>Especie</option>
-        <option value='origin'>Planeta de origen</option>
+        <option value='Human'>Humano</option>
+        <option value='Alien'>Alien</option>
+      </select>
+      <label className='form__search--labelSelect' htmlFor='status'>
+        Filtrar por estado:
+      </label>
+      <select
+        className='form__search--inputSearch'
+        name='status'
+        id='status'
+        value={props.searchStatus}
+        onChange={props.handleSearchStatus}
+      >
+        <option value='all'>Todos</option>
+        <option value='Alive'>Vivo</option>
+        <option value='Dead'>Muerto</option>
+        <option value='unkown'>Desconocido</option>
       </select>
     </>
   );

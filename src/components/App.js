@@ -10,23 +10,27 @@ import CharacterList from './CharacterList';
 import CharacterSearch from './CharacterSearch';
 import CharacterDetails from './CharacterDetails';
 import PageNotFound from './PageNotFound';
-//import SearchByFilters from './SearchByFilters';
-//import CharacterSearch from './CharacterSearch';
 
 function App() {
   const [data, setData] = useState([]);
   const [searchName, setSearchName] = useState('');
-  const [searchFilters, setSearchFilters] = useState('all');
-  //const [searchSpecie, setSearchSpecie] = useState('');
-  //const [searchStatus, setSearchStatus] = useState('');
+  //const [searchFilters, setSearchFilters] = useState('all');
+  const [searchSpecie, setSearchSpecie] = useState('all');
+  const [searchStatus, setSearchStatus] = useState('all');
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
       setData(initialData);
     });
   }, []);
-  const handleSearchFilters = (ev) => {
-    setSearchFilters(ev.currentTarget.value);
+  //const handleSearchFilters = (ev) => {
+  //setSearchFilters(ev.currentTarget.value);
+  //};
+  const handleSearchSpecie = (ev) => {
+    setSearchSpecie(ev.currentTarget.value);
+  };
+  const handleSearchStatus = (ev) => {
+    setSearchStatus(ev.currentTarget.value);
   };
   const handleSearchName = (ev) => {
     ev.preventDefault();
@@ -49,7 +53,10 @@ function App() {
     )
     .filter(
       (character) =>
-        searchFilters === 'all' || character.filters === searchFilters
+        searchSpecie === 'all' || searchSpecie === character.species
+    )
+    .filter(
+      (character) => searchStatus === 'all' || searchStatus === character.status
     );
 
   return (
@@ -69,8 +76,10 @@ function App() {
               <CharacterSearch
                 searchName={searchName}
                 handleSearchName={handleSearchName}
-                searchFilters={searchFilters}
-                handleSearchFilters={handleSearchFilters}
+                searchSpecie={searchSpecie}
+                handleSearchSpecie={handleSearchSpecie}
+                searchStatus={searchStatus}
+                handleSearchStatus={handleSearchStatus}
               />
             </section>
             <section>
