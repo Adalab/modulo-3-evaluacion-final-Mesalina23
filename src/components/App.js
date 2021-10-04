@@ -3,7 +3,7 @@ import '../styles/core/_reset.scss';
 import { useState, useEffect } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import api from '../services/charactersApi';
-//import ls from '../services/ls';
+import ls from '../services/ls';
 import Header from './Header';
 import Footer from './Footer';
 import CharacterList from './CharacterList';
@@ -12,16 +12,32 @@ import CharacterDetails from './CharacterDetails';
 import PageNotFound from './PageNotFound';
 
 function App() {
-  const [data, setData] = useState([]);
-  const [searchName, setSearchName] = useState('');
-  const [searchSpecie, setSearchSpecie] = useState('all');
-  const [searchStatus, setSearchStatus] = useState('all');
+  const [data, setData] = useState(ls.get('data', []));
+  const [searchName, setSearchName] = useState(ls.get('searchName', ''));
+  const [searchSpecie, setSearchSpecie] = useState(
+    ls.get('searchSpecie', 'all')
+  );
+  const [searchStatus, setSearchStatus] = useState(
+    ls.get('searchStatus', 'all')
+  );
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
       setData(initialData);
     });
   }, []);
+  useEffect(() => {
+    ls.set('data', data);
+  }, [data]);
+  useEffect(() => {
+    ls.set('searchName', searchName);
+  }, [searchName]);
+  useEffect(() => {
+    ls.set('searchSpecie', searchSpecie);
+  }, [searchSpecie]);
+  useEffect(() => {
+    ls.set('searchStatus', searchStatus);
+  }, [searchStatus]);
 
   const handleSearchSpecie = (ev) => {
     setSearchSpecie(ev.currentTarget.value);
