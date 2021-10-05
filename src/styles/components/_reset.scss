@@ -1,0 +1,19 @@
+.reset {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+  transform: translateX(-10px);
+
+  @media all and (min-width: 768px) {
+    transform: translateX(-100px);
+  }
+  &__button {
+    border-radius: 50%;
+    background: rgba(8, 8, 8, 0.5);
+    border: none;
+    cursor: pointer;
+  }
+  &__img {
+    height: 70px;
+  }
+}

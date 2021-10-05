@@ -49,6 +49,11 @@ function App() {
     ev.preventDefault();
     setSearchName(ev.currentTarget.value);
   };
+  const handleResetButton = (ev) => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   const routeData = useRouteMatch('/character/:id');
   console.log(routeData);
 
@@ -102,6 +107,7 @@ function App() {
                 handleSearchSpecie={handleSearchSpecie}
                 searchStatus={searchStatus}
                 handleSearchStatus={handleSearchStatus}
+                handleResetButton={handleResetButton}
               />
             </section>
             <section>
