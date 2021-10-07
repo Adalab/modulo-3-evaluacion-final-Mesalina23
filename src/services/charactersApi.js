@@ -12,6 +12,7 @@ function getCharactersFromApi() {
             origin: character.origin.name,
             episodes: character.episode.length,
             status: character.status,
+            location: character.location.name,
           };
         })
         .sort();

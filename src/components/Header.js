@@ -14,8 +14,8 @@ const Header = () => {
         <audio
           id='song'
           type='audio/mp3'
-          controls
           autoPlay
+          controls
           className='header__container--song'
         >
           {''}

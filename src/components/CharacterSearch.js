@@ -1,6 +1,7 @@
 import Reset from './Reset';
 import SearchByFilters from './SearchByFilters';
 import SearchByname from './SearchByName';
+import SearchByLocation from './SearchByLocation';
 
 function CharacterSearch(props) {
   return (
@@ -16,6 +17,10 @@ function CharacterSearch(props) {
           handleSearchSpecie={props.handleSearchSpecie}
           searchStatus={props.searchStatus}
           handleSearchStatus={props.handleSearchStatus}
+        />
+        <SearchByLocation
+          searchLocation={props.searchLocation}
+          hanleSearchLocation={props.hanleSearchLocation}
         />
       </form>
       <Reset handleResetButton={props.handleResetButton} />

@@ -20,6 +20,7 @@ function App() {
   const [searchStatus, setSearchStatus] = useState(
     ls.get('searchStatus', 'all')
   );
+  const [searchLocation, setSearchLocation] = useState('');
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
@@ -53,26 +54,19 @@ function App() {
     localStorage.clear();
     window.location.reload();
   };
+  const handleSearchLocation = (ev) => {
+    setSearchLocation(ev.currentTarget.value);
+  };
 
   const routeData = useRouteMatch('/character/:id');
-  console.log(routeData);
 
   const characterId = routeData !== null ? routeData.params.id : '';
-  console.log(characterId);
 
   const selectedCharacter = data.find(
     (character) => character.id === parseInt(characterId)
   );
   const filteredData = data
-    .sort(function (a, b) {
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    })
+
     .filter((character) =>
       character.name
         .toLocaleLowerCase()
@@ -84,7 +78,21 @@ function App() {
     )
     .filter(
       (character) => searchStatus === 'all' || searchStatus === character.status
-    );
+    )
+    .filter((character) =>
+      character.location
+        .toLocaleLowerCase()
+        .includes(searchLocation.toLocaleLowerCase())
+    )
+    .sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
 
   return (
     <div className='page'>
@@ -108,8 +116,11 @@ function App() {
                 searchStatus={searchStatus}
                 handleSearchStatus={handleSearchStatus}
                 handleResetButton={handleResetButton}
+                searchLocation={searchLocation}
+                handleSearchLocation={handleSearchLocation}
               />
             </section>
+            <section></section>
             <section>
               <CharacterList data={filteredData} />
             </section>
