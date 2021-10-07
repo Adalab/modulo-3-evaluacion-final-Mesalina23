@@ -20,7 +20,10 @@ function App() {
   const [searchStatus, setSearchStatus] = useState(
     ls.get('searchStatus', 'all')
   );
-  const [searchLocation, setSearchLocation] = useState('');
+
+  const [searchLocation, setSearchLocation] = useState(
+    ls.get('searchLocation', '')
+  );
 
   useEffect(() => {
     api.getCharactersFromApi().then((initialData) => {
