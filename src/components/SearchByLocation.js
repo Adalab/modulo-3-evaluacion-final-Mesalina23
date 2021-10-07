@@ -5,7 +5,7 @@ function SearchByLocation(props) {
         Filtrar por localización
       </label>
       <input
-        className='form__search--inputName'
+        className='form__search--inputLocation'
         type='text'
         name='location'
         id='location'
